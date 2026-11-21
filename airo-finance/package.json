@@ -1,0 +1,13 @@
+{
+  "name": "airo-finance",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Airo Finance — a product of Atlas Financial. Local-first personal finance workspace with budgets, manual accounts and a Meridian Connector.",
+  "scripts": {
+    "dev": "python3 -m http.server 4174",
+    "deploy": "surge ./ airo-finance.surge.sh"
+  },
+  "devDependencies": {
+    "surge": "^0.57.1"
+  }
+}

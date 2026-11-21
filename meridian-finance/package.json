@@ -1,0 +1,13 @@
+{
+  "name": "meridian-finance",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Meridian Finance — a product of Atlas Financial. Local-first investing workspace.",
+  "scripts": {
+    "dev": "python3 -m http.server 4173",
+    "deploy": "surge ./ meridian-finance.surge.sh"
+  },
+  "devDependencies": {
+    "surge": "^0.57.1"
+  }
+}

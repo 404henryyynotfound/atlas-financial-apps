@@ -1,0 +1,13 @@
+{
+  "name": "atlas-financial",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Atlas Financial corporate site, with links to Meridian Finance.",
+  "scripts": {
+    "serve": "npx --yes serve .",
+    "deploy": "surge ./ atlas-financial.surge.sh"
+  },
+  "devDependencies": {
+    "surge": "^0.57.1"
+  }
+}

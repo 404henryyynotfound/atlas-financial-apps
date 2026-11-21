@@ -1,0 +1,15 @@
+{
+  "name": "atlas-sync-worker",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Atlas Sync API on Cloudflare Workers Free with a SQLite-backed Durable Object (accounts, profiles, snapshots, calendar, SSE).",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "test": "node test.js"
+  },
+  "devDependencies": {
+    "wrangler": "^4.166.0"
+  }
+}

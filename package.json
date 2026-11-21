@@ -1,0 +1,23 @@
+{
+  "name": "atlas-financial-apps",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Atlas Financial apps — Meridian Finance, Airo Finance, Tandem, Atlas Business, Atlas Calendar, and the Atlas Sync service.",
+  "scripts": {
+    "sync": "node atlas-sync/server.js",
+    "sync:test": "node atlas-sync/test.js",
+    "dev:sync-worker": "npm --prefix atlas-sync-worker run dev",
+    "deploy:sync-worker": "npm --prefix atlas-sync-worker run deploy",
+    "dev:meridian": "npm --prefix meridian-finance run dev",
+    "dev:airo": "npm --prefix airo-finance run dev",
+    "dev:tandem": "npm --prefix tandem-finance run dev",
+    "dev:business": "npm --prefix atlas-business run dev",
+    "dev:calendar": "npm --prefix atlas-calendar run dev",
+    "deploy:meridian": "npm --prefix meridian-finance run deploy",
+    "deploy:atlas": "npm --prefix atlas-financial run deploy",
+    "deploy:airo": "npm --prefix airo-finance run deploy",
+    "deploy:tandem": "npm --prefix tandem-finance run deploy",
+    "deploy:business": "npm --prefix atlas-business run deploy",
+    "deploy:calendar": "npm --prefix atlas-calendar run deploy"
+  }
+}

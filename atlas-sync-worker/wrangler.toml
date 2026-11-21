@@ -1,0 +1,29 @@
+name = "atlas-sync"
+main = "worker.js"
+compatibility_date = "2026-11-21"
+# No Node.js APIs are used at runtime (Web APIs only), so nodejs_compat is intentionally omitted.
+
+[[durable_objects.bindings]]
+name = "ATLAS_SYNC"
+class_name = "AtlasSyncDO"
+
+# SQLite-backed Durable Objects are required on the Workers Free plan.
+# This single v1 migration must be kept; it creates the SQLite storage backend.
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["AtlasSyncDO"]
+
+# Schema-only changes (profiles, tokens.profile_id, calendar_events) are applied
+# idempotently by AtlasSyncDO.ensureSchema() on first request, so no v2 migration
+# tag is needed. Changing storage backends would require a new namespace.
+
+[vars]
+ALLOWED_ORIGIN = "*"
+
+# Optional secret (recommended): npx wrangler secret put CODE_PEPPER
+# When set, pairing codes are stored as HMAC-SHA256(CODE_PEPPER, code) digests.
+# Never put the pepper value in this file or in source control.
+
+# Deploy with: npx wrangler deploy (or: npm run deploy)
+# The first deploy prompts you to log in to a free Cloudflare account;
+# no credit card is required. Do not commit credentials or .dev.vars files.

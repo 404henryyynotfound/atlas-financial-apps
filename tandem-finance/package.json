@@ -1,0 +1,13 @@
+{
+  "name": "tandem-finance",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Tandem Finance — a product of Atlas Financial. Shared expenses, group bills, IOUs and settlements in one friendly workspace.",
+  "scripts": {
+    "dev": "python3 -m http.server 4176",
+    "deploy": "surge ./ tandem-finance.surge.sh"
+  },
+  "devDependencies": {
+    "surge": "^0.57.1"
+  }
+}
