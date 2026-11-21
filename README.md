@@ -48,6 +48,16 @@ Ubuntu App Center and as a single-file Flatpak (`com.atlasfinancial.Suite`) for
 Flathub submission. Source and release automation live in the Atlas Developers
 repo under `atlas-suite/`.
 
+```bash
+# Ubuntu / App Center
+sudo snap install atlas-suite
+
+# Flatpak bundle (before Flathub)
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+flatpak install --user atlas-suite.flatpak
+flatpak run com.atlasfinancial.Suite
+```
+
 ### Atlas Sync
 Zero-dependency Node service providing cloud accounts, one-time connector codes, per-app snapshots, real-time SSE updates, and CORS. Meridian pushes portfolio snapshots; Airo redeems the pairing code and keeps its own data synced live; Tandem syncs group data under `tandem`; Atlas Business syncs its full workspace under `business`; Atlas Developers syncs under `developer`.
 
