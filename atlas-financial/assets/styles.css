@@ -164,6 +164,7 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 500; margin: 0; lette
 .app-card.business { --accent: #a78bfa; --accent-soft: #ddd2ff; --accent-rgb: 167,139,250; }
 .app-card.developer { --accent: #5eead4; --accent-soft: #c7fff4; --accent-rgb: 94,234,212; }
 .app-card.calendar { --accent: #e2bd72; --accent-soft: #f7e6bd; --accent-rgb: 226,189,114; }
+.app-card.suite { --accent: #8fb6ff; --accent-soft: #d9e6ff; --accent-rgb: 143,182,255; }
 .app-card-top { display: flex; align-items: center; justify-content: space-between; gap: 14px; }
 .app-mark {
   width: 52px; height: 52px; border-radius: 14px; display: grid; place-items: center;

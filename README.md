@@ -13,6 +13,7 @@ Public monorepo for the Atlas Financial product family.
 | Atlas Business | `atlas-business/` | https://atlas-business.surge.sh |
 | Atlas Calendar | `atlas-calendar/` | https://atlas-calendar.surge.sh |
 | Atlas Developers | `atlas-developers/` — separate public repo | https://atlas-developers.surge.sh |
+| Atlas Suite | `atlas-developers/atlas-suite/` — desktop GUI | Snap `atlas-suite` / Flatpak `com.atlasfinancial.Suite` |
 | Atlas Sync service | `atlas-sync/` | Deploy to any Node host |
 
 All browser apps are static, no-bundler ES-module SPAs. They can be opened with any static file server and deployed directly to Surge.
@@ -36,6 +37,16 @@ One account, four workspace types (`personal`, `family`, `business`, `developer`
 
 ### Atlas Developers (separate repo)
 Developer-tools product with a payments/invoices dashboard, a zero-dependency CLI, an AI insights engine, an in-app Calendar widget, and downloadable GUI builds for Linux/macOS/Windows on x64 and arm64. Repo: https://github.com/404henryyynotfound/atlas-developers. Published npm packages and sudo system packages are documented below.
+
+### Atlas Suite
+
+A single desktop GUI that bundles local copies of Meridian, Airo, Tandem, Atlas
+Business, Atlas Calendar and Atlas Developers. A sidebar switches apps without
+opening six tabs, and one Atlas Sync sign-in shares the appropriate profile
+token with each bundled app. Packaged as the strict `atlas-suite` snap for
+Ubuntu App Center and as a single-file Flatpak (`com.atlasfinancial.Suite`) for
+Flathub submission. Source and release automation live in the Atlas Developers
+repo under `atlas-suite/`.
 
 ### Atlas Sync
 Zero-dependency Node service providing cloud accounts, one-time connector codes, per-app snapshots, real-time SSE updates, and CORS. Meridian pushes portfolio snapshots; Airo redeems the pairing code and keeps its own data synced live; Tandem syncs group data under `tandem`; Atlas Business syncs its full workspace under `business`; Atlas Developers syncs under `developer`.
