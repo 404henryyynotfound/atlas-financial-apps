@@ -1,0 +1,10 @@
+node_modules/
+dist/
+*.snap
+*.flatpak
+site/.surge-cache/
+parts/
+prime/
+stage/
+overlay/
+.DS_Store

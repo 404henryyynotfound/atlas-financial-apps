@@ -13,11 +13,13 @@
     "dev:tandem": "npm --prefix tandem-finance run dev",
     "dev:business": "npm --prefix atlas-business run dev",
     "dev:calendar": "npm --prefix atlas-calendar run dev",
+    "dev:swift": "npm --prefix swift-browser run start",
     "deploy:meridian": "npm --prefix meridian-finance run deploy",
     "deploy:atlas": "npm --prefix atlas-financial run deploy",
     "deploy:airo": "npm --prefix airo-finance run deploy",
     "deploy:tandem": "npm --prefix tandem-finance run deploy",
     "deploy:business": "npm --prefix atlas-business run deploy",
-    "deploy:calendar": "npm --prefix atlas-calendar run deploy"
+    "deploy:calendar": "npm --prefix atlas-calendar run deploy",
+    "deploy:swift": "cd swift-browser && npx surge ./site swift-browser.surge.sh"
   }
 }

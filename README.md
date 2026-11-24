@@ -15,6 +15,7 @@ Public monorepo for the Atlas Financial product family.
 | Atlas Developers | `atlas-developers/` — separate public repo | https://atlas-developers.surge.sh |
 | Atlas Suite | `atlas-developers/atlas-suite/` — desktop GUI | Snap `atlas-suite` / Flatpak `com.atlasfinancial.Suite` |
 | Atlas Sync service | `atlas-sync/` | Deploy to any Node host |
+| Swift browser | `swift-browser/` — desktop GUI + landing page | https://swift-browser.surge.sh · Snap `swift-browser` · Flatpak `com.swiftbrowser.Swift` |
 
 All browser apps are static, no-bundler ES-module SPAs. They can be opened with any static file server and deployed directly to Surge.
 
@@ -64,6 +65,20 @@ Zero-dependency Node service providing cloud accounts, one-time connector codes,
 #### Free hosted sync (Cloudflare Workers)
 
 `atlas-sync-worker/` deploys the same API to Cloudflare's free Workers plan with a SQLite-backed Durable Object (no credit card, persistent state, SSE). It is **live** at https://atlas-sync.greenhenry441.workers.dev, and all app defaults point there. Run `npm run dev:sync-worker` locally and `npm run deploy:sync-worker` to publish your own copy. It adds one account with `personal`/`family`/`business`/`developer` profiles (business/developer endpoints return `403 PROFILE_REQUIRED` until that profile is created via `/api/profiles`, so the UI can show a CTA) plus a shared calendar API under `/api/calendar/*`. Bearer tokens and `GET /api/events?token=` still work. See `atlas-sync-worker/README.md` for setup, limits and caveats.
+
+### Swift browser
+
+A privacy-first desktop browser built on Electron/Chromium. Swift ships a bundled third-party tracker list (no remote download), fingerprint defenses, HTTPS upgrading, Global Privacy Control, third-party cookie blocking, Turbo mode and background tab sleeping. History, bookmarks and settings stay local, with a built-in privacy dashboard and private tabs.
+
+Swift also opens a local-first app suite directly from the browser sidebar: Swift ID, Chat, Meet, AI, Docs, Sheets, Decks, Notes, Calendar, Drive and Tasks. Swift ID is a device-local PBKDF2 account with custom signup/signin screens; Drive files are encrypted with AES-256-GCM. Swift Mail is coming soon and needs a custom domain before `@swift.email` addresses can be created.
+
+```bash
+npm run dev:swift                       # start the browser
+npm --prefix swift-browser run dist:linux-arm64
+npm run deploy:swift                    # publish swift-browser/site to Surge
+```
+
+Snap (`swift-browser`) and Flatpak/Flathub (`com.swiftbrowser.Swift`) packaging lives under `swift-browser/snap/` and `swift-browser/flatpak/`. Full build and submission steps are in `swift-browser/README.md`.
 
 ## Shared calendar widgets
 
