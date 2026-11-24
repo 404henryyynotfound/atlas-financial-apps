@@ -235,7 +235,7 @@
             <tbody>
               <tr>
                 <th scope="row">Privacy defaults</th>
-                <td>On</td><td>On · lean</td><td>Policy-controlled</td><td>On</td><td>Reduced guardrails</td><td>Configurable</td>
+                <td>On</td><td>On · lean</td><td>Policy-controlled</td><td>On</td><td>Strict · unstable builds</td><td>Configurable</td>
               </tr>
               <tr>
                 <th scope="row">App suite</th>
@@ -243,7 +243,7 @@
               </tr>
               <tr>
                 <th scope="row">Managed policies</th>
-                <td><span class="dash" aria-label="Not included">—</span></td><td><span class="dash" aria-label="Not included">—</span></td><td>Yes · planned</td><td><span class="dash" aria-label="Not included">—</span></td><td><span class="dash" aria-label="Not included">—</span></td><td>Partial · planned</td>
+                <td><span class="dash" aria-label="Not included">—</span></td><td><span class="dash" aria-label="Not included">—</span></td><td>Yes · local policy file</td><td><span class="dash" aria-label="Not included">—</span></td><td><span class="dash" aria-label="Not included">—</span></td><td><span class="dash" aria-label="Not included">—</span></td>
               </tr>
               <tr>
                 <th scope="row">Experimental flags</th>
@@ -289,36 +289,33 @@
         <div class="enterprise-panel__copy">
           <p class="kicker">05 / For teams</p>
           <h2 id="enterprise-heading">Fleet control without<br><span class="soft">watching your people.</span></h2>
-          <p>Swift Enterprise is our planned managed edition: privacy controls that ship on, policy files that can be reviewed, SSO-ready integration points, and administrator documentation written for humans.</p>
+          <p>Swift Enterprise is the managed edition: privacy controls that ship on, a local policy file that can be reviewed, and administrator documentation written for humans. SSO integration points and pinned update rings are still planned.</p>
           <ul class="enterprise-panel__list">
-            <li>Managed fleet policies and pinned update rings</li>
+            <li>Managed privacy policies from an auditable JSON file</li>
             <li>Privacy defaults your team can audit in source</li>
-            <li>SSO-ready hooks for your identity provider</li>
+            <li>Separate profile so managed and personal browsing stay apart</li>
             <li>Admin documentation alongside the codebase</li>
           </ul>
           <div class="hero__buttons">
             <a class="button button--solid" href="https://github.com/404henryyynotfound/swift-browser">Read the project <span aria-hidden="true">↗</span></a>
             <a class="button button--outline" href="https://github.com/404henryyynotfound/swift-browser/releases/latest">Stable releases <span aria-hidden="true">↗</span></a>
           </div>
-          <p class="fine-print">No customer logos, SLAs, or deployment numbers are claimed here. Enterprise capabilities are planned and developed in the open.</p>
+          <p class="fine-print">No customer logos, SLAs, or deployment numbers are claimed here. Enterprise capabilities are developed in the open; future items are marked as planned.</p>
         </div>
 
         <div class="policy-card">
-          <div class="policy-card__bar"><span>swift.policy.yaml</span><span class="policy-card__flag">planned schema</span></div>
-          <pre><code id="policy-code"># illustrative only — not a published schema
-profile: swift-enterprise
-updates:
-  channel: enterprise
-  ring: pinned
-privacy:
-  telemetry: off
-  thirdPartyCookies: blocked
-identity:
-  sso: oidc
-  required: true
-apps:
-  allowlist: [docs, sheets, notes, drive]
-</code></pre>
+          <div class="policy-card__bar"><span>enterprise-policy.json</span><span class="policy-card__flag">local policy file</span></div>
+          <pre><code id="policy-code">{
+  "organization": "Example Org",
+  "supportUrl": "https://intranet.example.com/help",
+  "settings": {
+    "trackerBlocking": true,
+    "thirdPartyCookies": false,
+    "referrerPolicy": "none",
+    "fingerprintLevel": "strict",
+    "dnt": true
+  }
+}</code></pre>
           <button class="copy-button" type="button" data-copy-target="policy-code"><span class="copy-button__label">Copy</span></button>
         </div>
       </div>
