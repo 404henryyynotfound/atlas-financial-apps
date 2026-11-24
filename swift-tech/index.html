@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#050912">
+  <meta name="description" content="Swift Technologies builds the Swift browser and its local-first app suite across six release channels — Stable, Lite, Enterprise, Beta, Nightly and Developer.">
+  <title>Swift Technologies — one platform, six ways to move</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.replace('no-js', 'js');</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Original sprite: a chevron variant and an ST monogram, both reused below. -->
+  <svg class="svg-sprite" aria-hidden="true" focusable="false" width="0" height="0">
+    <defs>
+      <linearGradient id="st-grad-a" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#22d3ee"></stop>
+        <stop offset="1" stop-color="#6366f1"></stop>
+      </linearGradient>
+      <linearGradient id="st-grad-b" x1="0" y1="1" x2="1" y2="0">
+        <stop offset="0" stop-color="#6366f1"></stop>
+        <stop offset="1" stop-color="#a855f7"></stop>
+      </linearGradient>
+    </defs>
+    <symbol id="st-chevron" viewBox="0 0 64 64">
+      <path d="M4 13 33 32 4 51l11-19z" fill="url(#st-grad-a)"></path>
+      <path d="M23 9 60 32 23 55l13-23z" fill="url(#st-grad-b)"></path>
+      <path d="M44 23 56 32 44 41l7-9z" fill="#e6fbff" opacity=".55"></path>
+    </symbol>
+    <symbol id="st-monogram" viewBox="0 0 64 64">
+      <rect x="1" y="1" width="62" height="62" rx="16" fill="#080e1d" stroke="url(#st-grad-a)" stroke-width="1.5"></rect>
+      <path d="M39 20H25c-4 0-7 2.5-7 6s3 6 7 6h12c4 0 7 2.5 7 6s-3 6-7 6H22" fill="none" stroke="url(#st-grad-a)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"></path>
+      <path d="M32 18v28M22 18h20" fill="none" stroke="url(#st-grad-b)" stroke-width="4.5" stroke-linecap="round"></path>
+    </symbol>
+  </svg>
+
+  <header class="masthead" id="masthead">
+    <div class="wrap masthead__inner">
+      <a class="identity" href="#top" aria-label="Swift Technologies — back to top">
+        <span class="identity__stamp"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#st-monogram"></use></svg></span>
+        <span class="identity__words"><b>Swift</b><span>Technologies</span></span>
+      </a>
+
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="main-nav" id="main-nav" aria-label="Primary">
+        <a href="#editions">Editions</a>
+        <a href="#compare">Compare</a>
+        <a href="#channels">Channels</a>
+        <a href="#enterprise">Enterprise</a>
+        <a href="#developers">Developers</a>
+        <a class="main-nav__action" href="https://github.com/404henryyynotfound/swift-browser">Source <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-heading">
+      <div class="hero__atmosphere" aria-hidden="true">
+        <div class="hero__fallback"></div>
+        <canvas class="hero__canvas" id="signal-canvas"></canvas>
+        <div class="hero__mesh"></div>
+      </div>
+
+      <div class="wrap hero__inner">
+        <div class="hero__story reveal">
+          <p class="eyebrow"><span class="eyebrow__dot"></span> Swift Technologies · platform brief</p>
+          <h1 id="hero-heading">One browser platform.<br><em>Six ways to move.</em></h1>
+          <p class="hero__lede">We build Swift: a privacy-first browser and a local-first app suite. From a browser that runs on older hardware to a canary build for the relentless — the same core, tuned for the way you work.</p>
+          <div class="hero__buttons">
+            <a class="button button--solid" href="#editions">Explore the editions <span aria-hidden="true">→</span></a>
+            <a class="button button--outline" href="https://swift-browser.surge.sh">Visit the browser site <span aria-hidden="true">↗</span></a>
+          </div>
+          <p class="hero__aside">Open source, Linux-first, and honest about what is shipped versus planned.</p>
+        </div>
+
+        <div class="release-board reveal" aria-label="Illustrative release channel diagram">
+          <div class="release-board__head">
+            <span class="release-board__label">RELEASE MATRIX</span>
+            <span class="release-board__status"><i></i> illustrative</span>
+          </div>
+          <ol class="release-board__lanes">
+            <li><span class="lane-mark lane-mark--cyan"></span><span class="lane-name">Stable</span><span class="lane-track"><i></i></span><span class="lane-tag">tagged</span></li>
+            <li><span class="lane-mark lane-mark--sky"></span><span class="lane-name">Lite</span><span class="lane-track"><i></i></span><span class="lane-tag">lean</span></li>
+            <li><span class="lane-mark lane-mark--indigo"></span><span class="lane-name">Enterprise</span><span class="lane-track"><i></i></span><span class="lane-tag">pinned</span></li>
+            <li><span class="lane-mark lane-mark--violet"></span><span class="lane-name">Beta</span><span class="lane-track"><i></i></span><span class="lane-tag">weekly</span></li>
+            <li><span class="lane-mark lane-mark--rose"></span><span class="lane-name">Nightly</span><span class="lane-track"><i></i></span><span class="lane-tag">daily</span></li>
+            <li><span class="lane-mark lane-mark--lime"></span><span class="lane-name">Developer</span><span class="lane-track"><i></i></span><span class="lane-tag">per-merge</span></li>
+          </ol>
+          <div class="release-board__foot">
+            <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#st-chevron"></use></svg>
+            <span>One core. Six delivery paths.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <dl class="figures reveal">
+          <div class="figures__item">
+            <dt>Editions in the lineup</dt>
+            <dd><span data-counter data-to="5" data-duration="1200">5</span></dd>
+          </div>
+          <div class="figures__item">
+            <dt>Local-first apps today</dt>
+            <dd><span data-counter data-to="11" data-duration="1500">11</span></dd>
+          </div>
+          <div class="figures__item">
+            <dt>Publishing channels</dt>
+            <dd><span data-counter data-to="6" data-duration="1800">6</span></dd>
+          </div>
+          <div class="figures__item">
+            <dt>Accounts required</dt>
+            <dd><span data-counter data-to="0">0</span></dd>
+          </div>
+        </dl>
+        <p class="figures__note">Illustrative product-map figures — not benchmarks, adoption metrics, or performance claims. They reset on reload.</p>
+      </div>
+    </section>
+
+    <section class="section" id="editions" aria-labelledby="editions-heading">
+      <div class="wrap">
+        <div class="section__intro reveal">
+          <p class="kicker">01 / Product lineup</p>
+          <h2 id="editions-heading">Pick the Swift that fits<br><span class="soft">the job in front of you.</span></h2>
+          <p class="section__lede">Every edition starts from the stable Swift browser — no cloud account, no telemetry, and a local-first app suite. What changes is the resource budget, the guardrails, and how quickly new code reaches you.</p>
+        </div>
+
+        <div class="stable-band reveal">
+          <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#st-chevron"></use></svg>
+          <div>
+            <h3>Swift Stable</h3>
+            <p>The everyday browser and the foundation for every edition below. Tagged releases, full app suite, and the default privacy posture.</p>
+          </div>
+          <a href="https://github.com/404henryyynotfound/swift-browser/releases/latest">Latest release <span aria-hidden="true">↗</span></a>
+        </div>
+
+        <div class="edition-grid">
+          <article class="edition-card reveal" style="--tone:#22d3ee">
+            <div class="edition-card__top"><span class="edition-card__number">01</span><span class="edition-card__chip">lightweight</span></div>
+            <h3>Swift Lite</h3>
+            <p>A low-resource browser for older devices and slow links. Same privacy defaults, a smaller footprint, and fewer background tasks.</p>
+            <p class="edition-card__route"><span>Planned route</span> <code>swift://install/lite</code></p>
+            <a class="edition-card__link" href="https://github.com/404henryyynotfound/swift-browser/releases/latest">Follow releases <span aria-hidden="true">→</span></a>
+          </article>
+
+          <article class="edition-card reveal" style="--tone:#818cf8">
+            <div class="edition-card__top"><span class="edition-card__number">02</span><span class="edition-card__chip">fleet-ready</span></div>
+            <h3>Swift Enterprise</h3>
+            <p>Managed fleet policies, privacy controls, SSO-ready integration points, and admin documentation for teams that need oversight without surveillance.</p>
+            <p class="edition-card__route"><span>Planned route</span> <code>swift://enterprise/enroll</code></p>
+            <a class="edition-card__link" href="#enterprise">See the enterprise brief <span aria-hidden="true">→</span></a>
+          </article>
+
+          <article class="edition-card reveal" style="--tone:#c084fc">
+            <div class="edition-card__top"><span class="edition-card__number">03</span><span class="edition-card__chip">preview</span></div>
+            <h3>Swift Beta</h3>
+            <p>A public preview channel with opt-in experimental features. New ideas arrive earlier; feedback goes straight into the issue tracker.</p>
+            <p class="edition-card__route"><span>Planned route</span> <code>swift://channels/beta</code></p>
+            <a class="edition-card__link" href="https://github.com/404henryyynotfound/swift-browser/issues">Open an issue <span aria-hidden="true">→</span></a>
+          </article>
+
+          <article class="edition-card reveal" style="--tone:#fb7185">
+            <div class="edition-card__top"><span class="edition-card__number">04</span><span class="edition-card__chip edition-card__chip--warn">unstable</span></div>
+            <h3>Swift Nightly / Canary</h3>
+            <p>Bleeding-edge builds with a separate profile and an unstable warning. Expect rough edges, broken flags, and changes without notice.</p>
+            <p class="edition-card__route"><span>Planned route</span> <code>swift://channels/nightly</code></p>
+            <a class="edition-card__link" href="https://github.com/404henryyynotfound/swift-browser">Read the source <span aria-hidden="true">→</span></a>
+          </article>
+
+          <article class="edition-card reveal" style="--tone:#a3e635">
+            <div class="edition-card__top"><span class="edition-card__number">05</span><span class="edition-card__chip">tooling</span></div>
+            <h3>Swift Developer</h3>
+            <p>A DevTools-first build with remote debugging, extension hooks, and automation surfaces for people who live in the inspector.</p>
+            <p class="edition-card__route"><span>Planned route</span> <code>swift://channels/developer</code></p>
+            <a class="edition-card__link" href="#developers">Read the API sketch <span aria-hidden="true">→</span></a>
+          </article>
+        </div>
+        <p class="fine-print reveal">The <code>swift://</code> routes above are planned identifiers, not published installers. Only tagged stable builds are linked to release artifacts.</p>
+      </div>
+    </section>
+
+    <section class="section section--suite" id="suite" aria-labelledby="suite-heading">
+      <div class="wrap suite-layout">
+        <div class="section__intro reveal">
+          <p class="kicker">02 / Local-first suite</p>
+          <h2 id="suite-heading">A workspace that<br><span class="gradient-text">stays on your device.</span></h2>
+          <p class="section__lede">Swift ID signs you in locally, then opens eleven apps from the sidebar, new tab, or command palette. No second passwords, no sync server, no data leaving the machine unless you export it.</p>
+          <a class="text-link" href="https://github.com/404henryyynotfound/swift-browser">See how it is built <span aria-hidden="true">↗</span></a>
+        </div>
+        <ul class="app-roster reveal">
+          <li><span>ID</span> Swift ID</li>
+          <li><span>CH</span> Swift Chat</li>
+          <li><span>MT</span> Swift Meet</li>
+          <li><span>AI</span> Swift AI</li>
+          <li><span>DC</span> Swift Docs</li>
+          <li><span>SH</span> Swift Sheets</li>
+          <li><span>DK</span> Swift Decks</li>
+          <li><span>NT</span> Swift Notes</li>
+          <li><span>CA</span> Swift Calendar</li>
+          <li><span>DR</span> Swift Drive</li>
+          <li><span>TK</span> Swift Tasks</li>
+          <li class="app-roster__soon"><span>✉</span> Swift Mail <small>coming soon — waiting on a custom domain for @swift.email addresses.</small></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="compare" aria-labelledby="compare-heading">
+      <div class="wrap">
+        <div class="section__intro reveal">
+          <p class="kicker">03 / At a glance</p>
+          <h2 id="compare-heading">The same core,<br><span class="soft">different commitments.</span></h2>
+          <p class="section__lede">A map of what each edition is intended to emphasize. Values describe product direction; planned items are marked and may not be available yet.</p>
+        </div>
+
+        <div class="table-shell reveal" tabindex="0" role="region" aria-label="Edition comparison table; scroll horizontally on small screens">
+          <table>
+            <caption class="sr-only">Comparison of Swift Stable, Lite, Enterprise, Beta, Nightly and Developer editions</caption>
+            <thead>
+              <tr>
+                <th scope="col">Capability</th>
+                <th scope="col">Stable</th>
+                <th scope="col">Lite</th>
+                <th scope="col">Enterprise</th>
+                <th scope="col">Beta</th>
+                <th scope="col">Nightly</th>
+                <th scope="col">Developer</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Privacy defaults</th>
+                <td>On</td><td>On · lean</td><td>Policy-controlled</td><td>On</td><td>Reduced guardrails</td><td>Configurable</td>
+              </tr>
+              <tr>
+                <th scope="row">App suite</th>
+                <td>Full · 11 apps</td><td>Core apps</td><td>Full · policy-gated</td><td>Full</td><td>Full</td><td>Full + hooks</td>
+              </tr>
+              <tr>
+                <th scope="row">Managed policies</th>
+                <td><span class="dash" aria-label="Not included">—</span></td><td><span class="dash" aria-label="Not included">—</span></td><td>Yes · planned</td><td><span class="dash" aria-label="Not included">—</span></td><td><span class="dash" aria-label="Not included">—</span></td><td>Partial · planned</td>
+              </tr>
+              <tr>
+                <th scope="row">Experimental flags</th>
+                <td>No</td><td>No</td><td>Opt-in</td><td>Yes</td><td>Yes</td><td>Yes</td>
+              </tr>
+              <tr>
+                <th scope="row">DevTools</th>
+                <td>Built in</td><td>Built in</td><td>Built in</td><td>Built in</td><td>Built in</td><td>First-class</td>
+              </tr>
+              <tr>
+                <th scope="row">Support channel</th>
+                <td>Releases + issues</td><td>Issues</td><td>Docs + planned SLA</td><td>Preview issues</td><td>Canary issues</td><td>Docs + issues</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="fine-print reveal">Swift Mail is not in the table because it is coming soon — waiting on a custom domain for @swift.email addresses.</p>
+      </div>
+    </section>
+
+    <section class="section section--channels" id="channels" aria-labelledby="channels-heading">
+      <div class="wrap">
+        <div class="section__intro reveal">
+          <p class="kicker">04 / Channels &amp; cadence</p>
+          <h2 id="channels-heading">Choose your distance<br><span class="gradient-text">from the edge.</span></h2>
+          <p class="section__lede">Channels separate stability from experimentation. A Nightly bug should never land in the browser your family uses — that is why each channel keeps its own profile.</p>
+        </div>
+
+        <ol class="cadence">
+          <li class="reveal"><span class="cadence__index">S</span><div><h3>Stable</h3><p>Tagged releases from the main line. The default for everyday browsing.</p></div><span class="cadence__beat">on release</span></li>
+          <li class="reveal"><span class="cadence__index">L</span><div><h3>Lite</h3><p>Resource-budgeted variant that follows the stable core.</p></div><span class="cadence__beat">after stable</span></li>
+          <li class="reveal"><span class="cadence__index">E</span><div><h3>Enterprise</h3><p>Pinned and reviewed builds with policy controls and admin docs.</p></div><span class="cadence__beat">pinned</span></li>
+          <li class="reveal"><span class="cadence__index">B</span><div><h3>Beta</h3><p>Public preview with opt-in experimental features and feedback loops.</p></div><span class="cadence__beat">weekly target</span></li>
+          <li class="reveal"><span class="cadence__index">N</span><div><h3>Nightly / Canary</h3><p>Bleeding-edge builds, separate profile, unstable warning. Use at your own risk.</p></div><span class="cadence__beat">daily target</span></li>
+          <li class="reveal"><span class="cadence__index">D</span><div><h3>Developer</h3><p>Tooling-first channel for debugging, extension hooks, and automation.</p></div><span class="cadence__beat">per-merge</span></li>
+        </ol>
+        <p class="fine-print reveal">Cadence labels are targets and illustrative descriptions, not guaranteed schedules. Channels may remain unavailable until artifacts are published.</p>
+      </div>
+    </section>
+
+    <section class="section section--enterprise" id="enterprise" aria-labelledby="enterprise-heading">
+      <div class="wrap enterprise-panel reveal">
+        <div class="enterprise-panel__copy">
+          <p class="kicker">05 / For teams</p>
+          <h2 id="enterprise-heading">Fleet control without<br><span class="soft">watching your people.</span></h2>
+          <p>Swift Enterprise is our planned managed edition: privacy controls that ship on, policy files that can be reviewed, SSO-ready integration points, and administrator documentation written for humans.</p>
+          <ul class="enterprise-panel__list">
+            <li>Managed fleet policies and pinned update rings</li>
+            <li>Privacy defaults your team can audit in source</li>
+            <li>SSO-ready hooks for your identity provider</li>
+            <li>Admin documentation alongside the codebase</li>
+          </ul>
+          <div class="hero__buttons">
+            <a class="button button--solid" href="https://github.com/404henryyynotfound/swift-browser">Read the project <span aria-hidden="true">↗</span></a>
+            <a class="button button--outline" href="https://github.com/404henryyynotfound/swift-browser/releases/latest">Stable releases <span aria-hidden="true">↗</span></a>
+          </div>
+          <p class="fine-print">No customer logos, SLAs, or deployment numbers are claimed here. Enterprise capabilities are planned and developed in the open.</p>
+        </div>
+
+        <div class="policy-card">
+          <div class="policy-card__bar"><span>swift.policy.yaml</span><span class="policy-card__flag">planned schema</span></div>
+          <pre><code id="policy-code"># illustrative only — not a published schema
+profile: swift-enterprise
+updates:
+  channel: enterprise
+  ring: pinned
+privacy:
+  telemetry: off
+  thirdPartyCookies: blocked
+identity:
+  sso: oidc
+  required: true
+apps:
+  allowlist: [docs, sheets, notes, drive]
+</code></pre>
+          <button class="copy-button" type="button" data-copy-target="policy-code"><span class="copy-button__label">Copy</span></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--developers" id="developers" aria-labelledby="developers-heading">
+      <div class="wrap">
+        <div class="section__intro reveal">
+          <p class="kicker">06 / Developer docs</p>
+          <h2 id="developers-heading">Built to be inspected,<br><span class="gradient-text">extended, and automated.</span></h2>
+          <p class="section__lede">The Developer edition is a sketch of a better debugging surface: remote sessions, extension hooks, and an automation API that stays on your machine. The snippet below illustrates the intended shape, not a shipped SDK.</p>
+        </div>
+
+        <div class="docs-grid">
+          <div class="docs-card reveal">
+            <h3>Debug a tab</h3>
+            <pre><code id="debug-code">// proposed API surface — not shipped yet
+const session = await swift.debug.attach({
+  target: "tab-1",
+  remote: true
+});
+
+session.on("Runtime.consoleAPICalled", (event) =&gt; {
+  console.log(event.args.map((arg) =&gt; arg.value));
+});
+
+await session.send("Runtime.enable");</code></pre>
+            <button class="copy-button" type="button" data-copy-target="debug-code"><span class="copy-button__label">Copy</span></button>
+          </div>
+          <div class="docs-card reveal">
+            <h3>Register an extension hook</h3>
+            <pre><code id="hook-code">// planned extension surface
+swift.extensions.register({
+  id: "local-notes-inspector",
+  permission: "activeTab",
+  onPageReady(tab) {
+    return tab.readDOM("#article");
+  }
+});</code></pre>
+            <button class="copy-button" type="button" data-copy-target="hook-code"><span class="copy-button__label">Copy</span></button>
+          </div>
+        </div>
+
+        <div class="docs-links reveal">
+          <a href="https://github.com/404henryyynotfound/swift-browser">Repository <span aria-hidden="true">↗</span></a>
+          <a href="https://github.com/404henryyynotfound/swift-browser/releases/latest">Latest tagged build <span aria-hidden="true">↗</span></a>
+          <a href="https://swift-browser.surge.sh">Browser landing page <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap site-footer__inner">
+      <div class="site-footer__brand">
+        <a class="identity" href="#top" aria-label="Swift Technologies — back to top">
+          <span class="identity__stamp"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#st-monogram"></use></svg></span>
+          <span class="identity__words"><b>Swift</b><span>Technologies</span></span>
+        </a>
+        <p>The browser that moves at your speed — now across six delivery paths.</p>
+      </div>
+      <nav class="site-footer__nav" aria-label="Footer">
+        <a href="#editions">Editions</a>
+        <a href="#suite">Apps</a>
+        <a href="#compare">Compare</a>
+        <a href="#channels">Channels</a>
+        <a href="#enterprise">Enterprise</a>
+        <a href="#developers">Developers</a>
+      </nav>
+      <div class="site-footer__meta">
+        <p>Published at swift-tech.surge.sh</p>
+        <p><a href="https://swift-browser.surge.sh">swift-browser.surge.sh</a></p>
+        <p><a href="https://github.com/404henryyynotfound/swift-browser">github.com/404henryyynotfound/swift-browser</a></p>
+        <p>© <span data-year>2026</span> Swift Technologies. Open source, no fabricated customers or benchmarks.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

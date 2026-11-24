@@ -1,0 +1,4 @@
+node_modules/
+.surge/
+.DS_Store
+*.log
