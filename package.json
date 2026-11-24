@@ -20,6 +20,7 @@
     "deploy:tandem": "npm --prefix tandem-finance run deploy",
     "deploy:business": "npm --prefix atlas-business run deploy",
     "deploy:calendar": "npm --prefix atlas-calendar run deploy",
-    "deploy:swift": "cd swift-browser && npx surge ./site swift-browser.surge.sh"
+    "deploy:swift": "cd swift-browser && npx surge ./site swift-browser.surge.sh",
+    "deploy:swift-tech": "cd swift-tech && npx surge ./ swift-tech.surge.sh"
   }
 }

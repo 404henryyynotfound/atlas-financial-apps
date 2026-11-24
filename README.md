@@ -16,6 +16,7 @@ Public monorepo for the Atlas Financial product family.
 | Atlas Suite | `atlas-developers/atlas-suite/` — desktop GUI | Snap `atlas-suite` / Flatpak `com.atlasfinancial.Suite` |
 | Atlas Sync service | `atlas-sync/` | Deploy to any Node host |
 | Swift browser | `swift-browser/` — desktop GUI + landing page | https://swift-browser.surge.sh · Snap `swift-browser` · Flatpak `com.swiftbrowser.Swift` |
+| Swift Technologies | `swift-tech/` — editions and platform site | https://swift-tech.surge.sh |
 
 All browser apps are static, no-bundler ES-module SPAs. They can be opened with any static file server and deployed directly to Surge.
 
@@ -77,6 +78,10 @@ npm run dev:swift                       # start the browser
 npm --prefix swift-browser run dist:linux-arm64
 npm run deploy:swift                    # publish swift-browser/site to Surge
 ```
+
+One codebase ships five editions: Swift Lite (low-resource), Swift Enterprise (policy-managed), Swift Beta (public preview), Swift Nightly / Canary (bleeding edge) and Swift Developer (DevTools and automation). Each has its own profile, icon, defaults and release config; see `swift-browser/EDITIONS.md`.
+
+The corporate/product site for the platform is `swift-tech/` and is live at https://swift-tech.surge.sh. It documents all editions, the local-first suite, enterprise and developer channels, and the planned Swift Mail domain.
 
 Snap (`swift-browser`) and Flatpak/Flathub (`com.swiftbrowser.Swift`) packaging lives under `swift-browser/snap/` and `swift-browser/flatpak/`. Full build and submission steps are in `swift-browser/README.md`.
 
