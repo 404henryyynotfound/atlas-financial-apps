@@ -17,6 +17,10 @@ Public monorepo for the Atlas Financial product family.
 | Atlas Sync service | `atlas-sync/` | Deploy to any Node host |
 | Swift browser | `swift-browser/` — desktop GUI + landing page | https://swift-browser.surge.sh · Snap `swift-browser` · Flatpak `com.swiftbrowser.Swift` |
 | Swift Technologies | `swift-tech/` — editions and platform site | https://swift-tech.surge.sh |
+| SwiftShell | `swift-shell/` — shell language, CLI and docs site | https://swift-shell.surge.sh · npm `swift-shell` · Snap `swift-shell` · `.deb` releases |
+| cinnamon | `cinnamon/` — computer task manager with live processes, graphs and AI diagnostics | https://cinnamon-tasks.surge.sh · npm `cinnamon-gui` · Snap `cinnamon-tasks` · `.deb` releases |
+
+SwiftShell and cinnamon are standalone products in their own public repos (https://github.com/404henryyynotfound/swift-shell and https://github.com/404henryyynotfound/cinnamon), unrelated to Swift browser or Swift Technologies. Their source directories are kept here for convenience but are ignored by this monorepo.
 
 All browser apps are static, no-bundler ES-module SPAs. They can be opened with any static file server and deployed directly to Surge.
 
@@ -84,6 +88,36 @@ One codebase ships five editions: Swift Lite (low-resource), Swift Enterprise (p
 The corporate/product site for the platform is `swift-tech/` and is live at https://swift-tech.surge.sh. It documents all editions, the local-first suite, enterprise and developer channels, and the planned Swift Mail domain.
 
 Snap (`swift-browser`) and Flatpak/Flathub (`com.swiftbrowser.Swift`) packaging lives under `swift-browser/snap/` and `swift-browser/flatpak/`. Full build and submission steps are in `swift-browser/README.md`.
+
+### SwiftShell
+
+A new, independent shell language with variables, arrays, functions, loops, conditionals, pipelines, redirection and command substitution. Every command starts with `swift`; `swiftshell` remains available as an alias. It includes a curated offline package registry (`swift install hello`, `swift registry`, `swift search`) and a static documentation site deployed to Surge.
+
+```bash
+npm install -g swift-shell                 # npm (provides swift and swiftshell)
+sudo snap install swift-shell              # Snap Store
+sudo apt install ./swift-shell_1.0.0_amd64.deb   # .deb from GitHub releases
+
+swift eval 'for x in range(3) { echo "hi $x" }'
+swift run script.shs
+swift commands                             # list every subcommand
+```
+
+Language guide, examples and build commands: `swift-shell/README.md`. Site source: `swift-shell/site/`; deploy with `npm run deploy:swift-shell`.
+
+### cinnamon
+
+A computer task manager: live processes with CPU/memory usage in a sortable flat or parent/child tree table. Pause, resume, interrupt, terminate, kill and renice processes with confirmation, inspect open files, pin processes to follow them, and export CSV or Markdown reports. It also has real-time SVG performance graphs (CPU, memory, disk, network), explainable offline AI diagnostics, optional bring-your-own-key cloud AI, watcher rules and in-app plus GitHub changelogs. Local-first; no account is required.
+
+```bash
+npm install -g cinnamon-gui                # npm launcher
+sudo snap install cinnamon-tasks           # Snap Store
+sudo apt install ./cinnamon-linux-x64.deb        # .deb from GitHub releases
+```
+
+Features, BYOK setup and development commands: `cinnamon/README.md`.
+
+Both projects ship [Pi-Apps](https://pi-apps.io/) definitions in `swift-shell/pi-apps/` and `cinnamon/pi-apps/`. The import zips are attached to each GitHub release, and [Pi-Apps PR #3085](https://github.com/Botspot/pi-apps/pull/3085) adds both apps to the official catalogue.
 
 ## Shared calendar widgets
 
@@ -176,6 +210,8 @@ npm run deploy:airo
 npm run deploy:tandem
 npm run deploy:business
 npm run deploy:calendar
+npm run deploy:swift-shell
+npm run deploy:cinnamon
 ```
 
 The static apps need no build step. The sync service needs a Node host with a persistent volume for `atlas-sync/data/store.json` (Render, Railway, Fly.io, a VPS, etc.). After deploying it, set the sync URL in each app to the public HTTPS endpoint.
