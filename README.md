@@ -17,8 +17,8 @@ Public monorepo for the Atlas Financial product family.
 | Atlas Sync service | `atlas-sync/` | Deploy to any Node host |
 | Swift browser | `swift-browser/` — desktop GUI + landing page | https://swift-browser.surge.sh · Snap `swift-browser` · Flatpak `com.swiftbrowser.Swift` |
 | Swift Technologies | `swift-tech/` — editions and platform site | https://swift-tech.surge.sh |
-| SwiftShell | `swift-shell/` — shell language, CLI and docs site | https://swift-shell.surge.sh · npm `swift-shell` · Snap `swift-shell` · `.deb` releases |
-| cinnamon | `cinnamon/` — computer task manager with live processes, graphs and AI diagnostics | https://cinnamon-tasks.surge.sh · npm `cinnamon-gui` · Snap `cinnamon-tasks` · `.deb` releases |
+| SwiftShell | `swift-shell/` — shell language, CLI and docs site | https://swift-shell.surge.sh · npm `swift-shell` · downloads for Linux/macOS/Windows on x64 + arm64 · Snap `swift-shell` |
+| cinnamon | `cinnamon/` — computer task manager with live processes, graphs and AI diagnostics | https://cinnamon-tasks.surge.sh · npm `cinnamon-gui` + `cinnamon-cli` · downloads for Linux/macOS/Windows on x64 + arm64 · Snap `cinnamon-tasks` |
 
 SwiftShell and cinnamon are standalone products in their own public repos (https://github.com/404henryyynotfound/swift-shell and https://github.com/404henryyynotfound/cinnamon), unrelated to Swift browser or Swift Technologies. Their source directories are kept here for convenience but are ignored by this monorepo.
 
@@ -103,6 +103,8 @@ swift run script.shs
 swift commands                             # list every subcommand
 ```
 
+The site has direct downloads for Linux, macOS and Windows on both x64 and arm64, plus npm, Snap and `.deb`. The bundled registry includes `swiftfetch` (`swift install swiftfetch && swift run-pkg swiftfetch`), a neofetch-style system readout.
+
 Language guide, examples and build commands: `swift-shell/README.md`. Site source: `swift-shell/site/`; deploy with `npm run deploy:swift-shell`.
 
 ### cinnamon
@@ -110,10 +112,12 @@ Language guide, examples and build commands: `swift-shell/README.md`. Site sourc
 A computer task manager: live processes with CPU/memory usage in a sortable flat or parent/child tree table. Pause, resume, interrupt, terminate, kill and renice processes with confirmation, inspect open files, pin processes to follow them, and export CSV or Markdown reports. It also has real-time SVG performance graphs (CPU, memory, disk, network), explainable offline AI diagnostics, optional bring-your-own-key cloud AI, watcher rules and in-app plus GitHub changelogs. Local-first; no account is required.
 
 ```bash
-npm install -g cinnamon-gui                # npm launcher
+npm install -g cinnamon-gui cinnamon-cli   # GUI launcher + terminal CLI
 sudo snap install cinnamon-tasks           # Snap Store
 sudo apt install ./cinnamon-linux-x64.deb        # .deb from GitHub releases
 ```
+
+The site has direct downloads for Linux, macOS and Windows on both x64 and arm64. `cinnamon-cli ps`, `cinnamon-cli top`, `cinnamon-cli report` and `cinnamon-cli kill --yes <pid>` work offline, with no account required.
 
 Features, BYOK setup and development commands: `cinnamon/README.md`.
 
